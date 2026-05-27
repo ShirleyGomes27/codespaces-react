@@ -1,246 +1,246 @@
-/*
-    Programação para Internet
-    Professor: Guilherme Leal
-*/
+// /*
+//     Programação para Internet
+//     Professor: Guilherme Leal
+// */
 
-import { getMaxLength } from "@testing-library/user-event/dist/types/utils";
+// import { getMaxLength } from "@testing-library/user-event/dist/types/utils";
 
-// # Aula 06/05 - Introdução ao JavaScript
+// // # Aula 06/05 - Introdução ao JavaScript
 
-// ativar o formatador Prettier
-// ALT + SHIFT + F
+// // ativar o formatador Prettier
+// // ALT + SHIFT + F
 
-console.log("Bem vindo a PPI");
+// console.log("Bem vindo a PPI");
 
-// Variáveis
-let name = "João";
-let age = 17;
-let isStudent = true;
+// // Variáveis
+// let name = "João";
+// let age = 17;
+// let isStudent = true;
 
-const PI = 3.14; // const ----> não pode mudar de valor
-console.log(PI);
+// const PI = 3.14; // const ----> não pode mudar de valor
+// console.log(PI);
 
-// Operadores Aritméticos + - / * ** %
-let x = 5 + 5; //soma
-let y = "5" + 5; //concatenação (string + número = string)
-let z = "Hello" + 5; //concatenação (string + número = string)
+// // Operadores Aritméticos + - / * ** %
+// let x = 5 + 5; //soma
+// let y = "5" + 5; //concatenação (string + número = string)
+// let z = "Hello" + 5; //concatenação (string + número = string)
 
-console.log(x, y, z);
-console.log(typeof x);
+// console.log(x, y, z);
+// console.log(typeof x);
 
-// Operadores relacionais > < >= <= == !=   
-console.log('5' != 5); // Diferença
-console.log('5' == 5); // comparação de valor OU tipo
-console.log('5' === 5); // comparação de valor E tipo
+// // Operadores relacionais > < >= <= == !=   
+// console.log('5' != 5); // Diferença
+// console.log('5' == 5); // comparação de valor OU tipo
+// console.log('5' === 5); // comparação de valor E tipo
 
-// Operadores de incremento 
-x = x++; //
-console.log(x++); // incremento após o retorno do valor
-console.log(x);
-console.log(++x);
+// // Operadores de incremento 
+// x = x++; //
+// console.log(x++); // incremento após o retorno do valor
+// console.log(x);
+// console.log(++x);
 
-// x++;
-// ++x;
-// x += 1;
-// x }= x + 1;
+// // x++;
+// // ++x;
+// // x += 1;
+// // x }= x + 1;
 
-// Operadores lógicos - && (AND) || (OR) ! (NOT)
-let isExpression = (true && 5 + 2 * 3 < 10 ) || false;
-console.log(isExpression);
+// // Operadores lógicos - && (AND) || (OR) ! (NOT)
+// let isExpression = (true && 5 + 2 * 3 < 10 ) || false;
+// console.log(isExpression);
 
-// // if...else
-// if (condition) {
-//     // condition === true
-// } else {
-//     // condition === false
-// }
+// // // if...else
+// // if (condition) {
+// //     // condition === true
+// // } else {
+// //     // condition === false
+// // }
 
-// Template Strings
-let text =
-`React é 'tudo de bom'!
-Programar é minha vida!
-eu amo o IFRN`;
-console.log(text);
+// // Template Strings
+// let text =
+// `React é 'tudo de bom'!
+// Programar é minha vida!
+// eu amo o IFRN`;
+// console.log(text);
 
-// for (let index = 0; index < array.length; index++) {
-//     const element = array[index];
+// // for (let index = 0; index < array.length; index++) {
+// //     const element = array[index];
     
+// // }
+
+// // Array
+// let fruits = ['Banana' , 'Orange', 'Apple' , 'Mango'];
+
+// // Tamanho do array
+// console.log(fruits.lenght); 
+// console.log(fruits[0]);
+
+// // Adicionar um elemento no final do array
+// fruits.push('Kiwi'); 
+// console.log(fruits);
+
+// // Remove o último elemento do array
+// console.log(fruits.pop());
+// console.log(fruits);    
+
+// // Remove o primeiro elemento do array
+// console.log(fruits.shift()); 
+// console.log(fruits);    
+
+// // Adiciona um elemento no início do array
+// fruits.unshift('Lemon'); 
+// console.log(fruits);
+
+// // Argumento 1 - posiçâo
+// // Argumento 2 - quantidade de elementos a remover
+// // Argumento 3 - lista de elementos a ser adicionados
+// fruits.splice(2, 0, 'Kiwi' , 'Blueberry');
+// console.log(fruits);
+
+// fruits.splice(2, 3);
+// console.log(fruits);
+
+// // Desafio - subbstituir o elemento 'Apple' por 'Kiwi'
+// fruits.splice(3, 1, 'Kiwi');
+// console.log(fruits);
+
+// // Busca índice do elemento 'Apple'
+// let index = fruits.indexOf('Apple');
+// console.log(index);
+
+// fruits.splice(index, 1, 'Apple');
+// console.log(fruits);
+
+// // Ordem crescente
+// fruits.sort(); 
+// console.log(fruits);
+
+// // Ordem decrescente
+// fruits.reverse(); //toReversed
+// console.log(fruits);
+
+// let fruitsSort = fruits.toSorted();
+// console.log(fruits);
+// console.log(fruitsSort);
+
+// let fruitsReverse = fruits.toReversed();   
+// console.log(fruits);
+
+// const numbers = [45 , 4 , 9 , 16 , 25]
+// console.log(numbers);
+
+// // Desafio
+// // Criar um array 'numbers2' que duplique os valores de 'numbers'
+// // Output: [90 , 8 , 18 , 32 , 50]
+
+// let numbers2 = [numbers[0] * 2, numbers[1] * 2, numbers[2] * 2, numbers[3] * 2, numbers[4] * 2];
+// console.log(numbers2);
+
+// function myFunction(value, index, array) {
+//     return value * 2;
 // }
 
-// Array
-let fruits = ['Banana' , 'Orange', 'Apple' , 'Mango'];
+// // const numbersMap = numbers.map(myFunction);
+// // console.log(numbersMap);
 
-// Tamanho do array
-console.log(fruits.lenght); 
-console.log(fruits[0]);
+// console.log(numbers.map( (number) => number * 2 ));
 
-// Adicionar um elemento no final do array
-fruits.push('Kiwi'); 
-console.log(fruits);
-
-// Remove o último elemento do array
-console.log(fruits.pop());
-console.log(fruits);    
-
-// Remove o primeiro elemento do array
-console.log(fruits.shift()); 
-console.log(fruits);    
-
-// Adiciona um elemento no início do array
-fruits.unshift('Lemon'); 
-console.log(fruits);
-
-// Argumento 1 - posiçâo
-// Argumento 2 - quantidade de elementos a remover
-// Argumento 3 - lista de elementos a ser adicionados
-fruits.splice(2, 0, 'Kiwi' , 'Blueberry');
-console.log(fruits);
-
-fruits.splice(2, 3);
-console.log(fruits);
-
-// Desafio - subbstituir o elemento 'Apple' por 'Kiwi'
-fruits.splice(3, 1, 'Kiwi');
-console.log(fruits);
-
-// Busca índice do elemento 'Apple'
-let index = fruits.indexOf('Apple');
-console.log(index);
-
-fruits.splice(index, 1, 'Apple');
-console.log(fruits);
-
-// Ordem crescente
-fruits.sort(); 
-console.log(fruits);
-
-// Ordem decrescente
-fruits.reverse(); //toReversed
-console.log(fruits);
-
-let fruitsSort = fruits.toSorted();
-console.log(fruits);
-console.log(fruitsSort);
-
-let fruitsReverse = fruits.toReversed();   
-console.log(fruits);
-
-const numbers = [45 , 4 , 9 , 16 , 25]
-console.log(numbers);
-
-// Desafio
-// Criar um array 'numbers2' que duplique os valores de 'numbers'
-// Output: [90 , 8 , 18 , 32 , 50]
-
-let numbers2 = [numbers[0] * 2, numbers[1] * 2, numbers[2] * 2, numbers[3] * 2, numbers[4] * 2];
-console.log(numbers2);
-
-function myFunction(value, index, array) {
-    return value * 2;
-}
+// console.log(numbers.toSorted());
 
 // const numbersMap = numbers.map(myFunction);
 // console.log(numbersMap);
 
-console.log(numbers.map( (number) => number * 2 ));
+// console.log(numbers.map( (number) => number * 2 ));
 
-console.log(numbers.toSorted());
+// console.log(numbers.toSorted((a, b) => a - b)); // ordem crescente
+// console.log(numbers.toSorted((a, b) => b - a)); // ordem decrescente
 
-const numbersMap = numbers.map(myFunction);
-console.log(numbersMap);
+// numbers.sort((a, b) => a - b);
+// // Maior valor
+// console.log('Maior =', numbers[numbers.length - 1]);
 
-console.log(numbers.map( (number) => number * 2 ));
+// // Menor valor
+// console.log('Menor =', numbers[0]);
 
-console.log(numbers.toSorted((a, b) => a - b)); // ordem crescente
-console.log(numbers.toSorted((a, b) => b - a)); // ordem decrescente
+// // **********************************
+// // Aula 13/05 - Funções, array destructuring, spread operator
+// console.log(fruits);
 
-numbers.sort((a, b) => a - b);
-// Maior valor
-console.log('Maior =', numbers[numbers.length - 1]);
+// const fruits2 = ["Kiwi", "Avocado"];
+// console.log([...fruits2, "Grape"]);
 
-// Menor valor
-console.log('Menor =', numbers[0]);
+// // Spread - ...
+// const fruits3 = [...fruits, ...fruits2];
+// console.log(fruits3);
 
-// **********************************
-// Aula 13/05 - Funções, array destructuring, spread operator
-console.log(fruits);
+// // DESAFIO - Exibir todas as frutas que comecem
+// // com a letra A
+// const out = [];
+// const letra = "a";
 
-const fruits2 = ["Kiwi", "Avocado"];
-console.log([...fruits2, "Grape"]);
+// // for (let i = 0; i < fruits3.length; i++) {
+// //   const fruit = fruits3[i];
+// //   //toLowerCase - minúscula, toUpperCase - maiúscula
+// //   if (fruit[0].toLowerCase() === letra) {
+// //     out.push(fruit);
+// //   }
+// // }
 
-// Spread - ...
-const fruits3 = [...fruits, ...fruits2];
-console.log(fruits3);
+// // fruits3.map((fruit) => {
+// //   if (fruit[0].toLowerCase() === letra) {
+// //     out.push(fruit);
+// //   }
+// // });
 
-// DESAFIO - Exibir todas as frutas que comecem
-// com a letra A
-const out = [];
-const letra = "a";
+// // find - retorna a primeira ocorrência,
+// // de acordo com a condição
+// let outFind = fruits3.find(
+//   (fruit) => fruit[0].toLowerCase() === letra
+// );
+// console.log(outFind);
 
-// for (let i = 0; i < fruits3.length; i++) {
-//   const fruit = fruits3[i];
-//   //toLowerCase - minúscula, toUpperCase - maiúscula
-//   if (fruit[0].toLowerCase() === letra) {
-//     out.push(fruit);
-//   }
-// }
+// // filter - retorna TODAS as ocorrências,
+// // de acordo com a condição
+// let outFilter = fruits3.filter(
+//   (fruit) => fruit[0].toLowerCase() === letra
+// );
+// console.log(outFilter);
 
-// fruits3.map((fruit) => {
-//   if (fruit[0].toLowerCase() === letra) {
-//     out.push(fruit);
-//   }
+// // DESAFIO - Exibir o valor da soma de todos os
+// // números do array 'numbers'
+
+// console.log(numbers);
+
+// // map
+// let soma = 0;
+// numbers.map((number) => {
+//   soma += number;
 // });
+// console.log(soma);
 
-// find - retorna a primeira ocorrência,
-// de acordo com a condição
-let outFind = fruits3.find(
-  (fruit) => fruit[0].toLowerCase() === letra
-);
-console.log(outFind);
+// // reduce
+// console.log(
+//   numbers.reduce((soma, number) => soma + number)
+// );
 
-// filter - retorna TODAS as ocorrências,
-// de acordo com a condição
-let outFilter = fruits3.filter(
-  (fruit) => fruit[0].toLowerCase() === letra
-);
-console.log(outFilter);
+// // Object
+// const pessoa = {
+//   nome: 'Zé Vaqueiro',
+//   idade: 25,
+//   profissao: 'Cantor/Compositor'
+// };
 
-// DESAFIO - Exibir o valor da soma de todos os
-// números do array 'numbers'
+// console.log(pessoa.nome);
+// console.log(pessoa['nome']);
+// console.log(Object.keys(pessoa));
+// console.log(Object.values(pessoa));
 
-console.log(numbers);
-
-// map
-let soma = 0;
-numbers.map((number) => {
-  soma += number;
-});
-console.log(soma);
-
-// reduce
-console.log(
-  numbers.reduce((soma, number) => soma + number)
-);
-
-// Object
-const pessoa = {
-  nome: 'Zé Vaqueiro',
-  idade: 25,
-  profissao: 'Cantor/Compositor'
-};
-
-console.log(pessoa.nome);
-console.log(pessoa['nome']);
-console.log(Object.keys(pessoa));
-console.log(Object.values(pessoa));
-
-const pessoa2 = { ...pessoa, hobby: ''}
+// const pessoa2 = { ...pessoa, hobby: ''}
 
 function Product(name, sto, ram, price, qty, category){
     this.name = name;
     this.sto = sto;
     this.ram = ram;
-    this.pricce = price;
+    this.price = price;
     this.qty = qty; 
     this.category = category; 
 
@@ -262,4 +262,78 @@ const estoque = [
 {...p6}
 ];
 console.log(estoque);
+
+/* DESAFIO 1
+
+  a) Valor total de todos os produtos em estoque
+  b) Ordene os produtos por nome (crescente/descrescente)
+  c) Ordene os produtos por preço (crescente/descrescente)
+  d) Filtre produtos de acordo uma categoria
+
+*/
+
+/* a) Valor total de todos os produtos em estoque */
+
+const valorTotal = estoque.reduce((total, produto) => {
+    return total + (produto.price * produto.qty);
+}, 0);
+
+console.log("Valor total:", valorTotal);
+
+
+/* b) Ordenar produtos por nome */
+
+// Crescente
+const nomeCrescente = [...estoque].sort((a, b) => 
+    a.name.localeCompare(b.name)
+);
+
+console.log("Nome crescente:", nomeCrescente);
+
+// Decrescente
+const nomeDecrescente = [...estoque].sort((a, b) => 
+    b.name.localeCompare(a.name)
+);
+
+console.log("Nome decrescente:", nomeDecrescente);
+
+
+/* c) Ordenar produtos por preço */
+
+// Crescente
+const precoCrescente = [...estoque].sort((a, b) => 
+    a.price - b.price
+);
+
+console.log("Preço crescente:", precoCrescente);
+
+// Decrescente
+const precoDecrescente = [...estoque].sort((a, b) => 
+    b.price - a.price
+);
+
+console.log("Preço decrescente:", precoDecrescente);
+
+// d) Filtrar por categoria
+
+const celulares = estoque.filter(produto => 
+    produto.category === 'Celular'
+);
+
+console.log("Celulares:");
+console.log(celulares);
+
+const tablets = estoque.filter(produto => 
+    produto.category === 'Tablet'
+);
+
+console.log("Tablets:");
+console.log(tablets);
+
+const notebooks = estoque.filter(produto => 
+    produto.category === 'Notebook'
+);
+
+console.log("Notebooks:");
+console.log(notebooks);
 
