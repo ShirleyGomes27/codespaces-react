@@ -236,32 +236,32 @@
 
 // const pessoa2 = { ...pessoa, hobby: ''}
 
-function Product(name, sto, ram, price, qty, category){
-    this.name = name;
-    this.sto = sto;
-    this.ram = ram;
-    this.price = price;
-    this.qty = qty; 
-    this.category = category; 
+// function Product(name, sto, ram, price, qty, category){
+//     this.name = name;
+//     this.sto = sto;
+//     this.ram = ram;
+//     this.price = price;
+//     this.qty = qty; 
+//     this.category = category; 
 
-}
+// }
 
-const p1 = new Product('iPhone', 256, 16, 5000, 10, 'Celular');
-const p2 = new Product('iPad', 512, 16, 8000, 20, 'Tablet');
-const p3 = new Product('Macbook', 1024, 24, 15000, 30, 'Notebook');
-const p4 = new Product('iphone Pro max', 256, 16, 7000, 15, 'celular');
-const p5 = new Product('iPad Pro', 512, 16, 10000, 25, 'Tablet');
-const p6 = new Product('Macbook', 1024, 24, 25000, 35, 'Notebook');
+// const p1 = new Product('iPhone', 256, 16, 5000, 10, 'Celular');
+// const p2 = new Product('iPad', 512, 16, 8000, 20, 'Tablet');
+// const p3 = new Product('Macbook', 1024, 24, 15000, 30, 'Notebook');
+// const p4 = new Product('iphone Pro max', 256, 16, 7000, 15, 'celular');
+// const p5 = new Product('iPad Pro', 512, 16, 10000, 25, 'Tablet');
+// const p6 = new Product('Macbook', 1024, 24, 25000, 35, 'Notebook');
 
-const estoque = [
-{...p1}, 
-{...p2}, 
-{...p3},
-{...p4},
-{...p5},
-{...p6}
-];
-console.log(estoque);
+// const estoque = [
+// {...p1}, 
+// {...p2}, 
+// {...p3},
+// {...p4},
+// {...p5},
+// {...p6}
+// ];
+// console.log(estoque);
 
 /* DESAFIO 1
 
@@ -274,66 +274,123 @@ console.log(estoque);
 
 /* a) Valor total de todos os produtos em estoque */
 
-const valorTotal = estoque.reduce((total, produto) => {
-    return total + (produto.price * produto.qty);
-}, 0);
+// const valorTotal = estoque.reduce((total, produto) => {
+//     return total + (produto.price * produto.qty);
+// }, 0);
 
-console.log("Valor total:", valorTotal);
+// console.log("Valor total:", valorTotal);
 
 
 /* b) Ordenar produtos por nome */
 
-// Crescente
-const nomeCrescente = [...estoque].sort((a, b) => 
-    a.name.localeCompare(b.name)
-);
+// // Crescente
+// const nomeCrescente = [...estoque].sort((a, b) => 
+//     a.name.localeCompare(b.name)
+// );
 
-console.log("Nome crescente:", nomeCrescente);
-
-// Decrescente
-const nomeDecrescente = [...estoque].sort((a, b) => 
-    b.name.localeCompare(a.name)
-);
-
-console.log("Nome decrescente:", nomeDecrescente);
-
-
-/* c) Ordenar produtos por preço */
-
-// Crescente
-const precoCrescente = [...estoque].sort((a, b) => 
-    a.price - b.price
-);
-
-console.log("Preço crescente:", precoCrescente);
+// console.log("Nome crescente:", nomeCrescente);
 
 // Decrescente
-const precoDecrescente = [...estoque].sort((a, b) => 
-    b.price - a.price
-);
+// const nomeDecrescente = [...estoque].sort((a, b) => 
+//     b.name.localeCompare(a.name)
+// );
 
-console.log("Preço decrescente:", precoDecrescente);
+// console.log("Nome decrescente:", nomeDecrescente);
 
-// d) Filtrar por categoria
 
-const celulares = estoque.filter(produto => 
-    produto.category === 'Celular'
-);
+// /* c) Ordenar produtos por preço */
 
-console.log("Celulares:");
-console.log(celulares);
+// // Crescente
+// const precoCrescente = [...estoque].sort((a, b) => 
+//     a.price - b.price
+// );
 
-const tablets = estoque.filter(produto => 
-    produto.category === 'Tablet'
-);
+// console.log("Preço crescente:", precoCrescente);
 
-console.log("Tablets:");
-console.log(tablets);
+// // Decrescente
+// const precoDecrescente = [...estoque].sort((a, b) => 
+//     b.price - a.price
+// );
 
-const notebooks = estoque.filter(produto => 
-    produto.category === 'Notebook'
-);
+// console.log("Preço decrescente:", precoDecrescente);
 
-console.log("Notebooks:");
-console.log(notebooks);
+// // d) Filtrar por categoria
 
+// const celulares = estoque.filter(produto => 
+//     produto.category === 'Celular'
+// );
+
+// console.log("Celulares:");
+// console.log(celulares);
+
+// const tablets = estoque.filter(produto => 
+//     produto.category === 'Tablet'
+// );
+
+// console.log("Tablets:");
+// console.log(tablets);
+
+// const notebooks = estoque.filter(produto => 
+//     produto.category === 'Notebook'
+// );
+
+// console.log("Notebooks:");
+// console.log(notebooks);
+
+// Desafio 2
+
+// QUESTÃO 1
+
+const alunos = [
+  { nome: "Ana", notas: [8, 7, 9] },
+  { nome: "Bruno", notas: [5, 6, 5] },
+  { nome: "Carla", notas: [9, 9, 10] },
+  { nome: "Diego", notas: [6, 7, 8] },
+];
+
+const aprovados = alunos
+  .map((aluno) => {
+    const soma = aluno.notas.reduce((total, nota) => total + nota, 0);
+    const media = soma / aluno.notas.length;
+
+    return {
+      nome: aluno.nome,
+      media: Number(media.toFixed(2))
+    };
+  })
+  .filter((aluno) => aluno.media >= 7)
+  .sort((a, b) => b.media - a.media);
+
+console.log(aprovados);
+
+// QUESTÃO 2
+
+const filmes = [
+  { titulo: "O Senhor dos Anéis", ano: 2001, genero: "fantasia" },
+  { titulo: "Matrix", ano: 1999, genero: "ficção" },
+  { titulo: "Interestelar", ano: 2014, genero: "ficção" },
+  { titulo: "Divertida Mente", ano: 2015, genero: "animação" },
+];
+
+function buscarFilmes(genero, criterio) {
+  return filmes
+    .filter((filme) => filme.genero === genero)
+    .slice() 
+    .sort((a, b) => {
+      if (criterio === "ano") {
+        return b.ano - a.ano; 
+      }
+
+      if (criterio === "titulo") {
+        return a.titulo.localeCompare(b.titulo);
+      }
+
+      return 0;
+    })
+    .map(
+      (filme) =>
+        `${filme.titulo} (${filme.ano}) - ${filme.genero}`
+    );
+}
+
+console.log(buscarFilmes("ficção", "ano"));
